@@ -1,0 +1,31 @@
+<Doctype Html>
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<title>Test1</title>
+		<script type="text/javascript">
+			function check(){
+				var fpass = document.getElementById('password1');
+				var spass = document.getElementById('password2');
+				if(fpass.value != spass.value){
+					alert("Password must match ");
+						return false;
+				}
+			}
+		</script>
+	</head>
+	<body>
+	<form>
+		<fieldset>
+			<legend>Personal Information</legend>
+			<label>FirstName:<input type="text" id="fname" name="firstname"  required></label><br/>
+			<label>MiddleName:<input type="text" id="sname" name="secondname"required></label><br>
+			<label>Email:<input type="email" id="email-1" name="email" required></label><br/>
+			<label>choose password:<input type="password" name="password1" id="password1" pattern="[a-zA-Z]{8}" required></label><br/>
+			<label>Retype password:<input type="password" name="password2" id="password2"required onchange="check()"></label><br/>
+			<Label>Date of Birth:<input type="date" name="date" required></Label><br/>
+			<input type="submit" name="submit" onclick= "return check();">
+		</fieldset>
+	</form>
+	</body>
+	</html>
